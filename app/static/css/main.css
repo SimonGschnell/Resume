@@ -1,0 +1,39 @@
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+.cursor-default{
+cursor:default;
+}
+
+.main-card{
+height:100%;
+box-shadow: 0px 0px 15px #aaaaaa;
+
+}
+
+.zoom{
+transition: transform .2s;
+}
+
+.zoom:hover{
+transform: scale(1.5);
+}

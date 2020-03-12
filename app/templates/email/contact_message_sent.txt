@@ -1,0 +1,7 @@
+Hi Simon someone named {{ user.name }} has contacted you,
+
+This is the message he wrote you:
+{{user.msg}}
+
+If you want to contact him his email is :
+{{user.email}}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    {% endblock %}
+
+    <title>
+      {% if title %}
+      {{title}}
+      {% else %}
+      Simon Gschnell
+      {% endif %}
+    </title>
+    {% endblock %}
+  </head>
+  <body>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+  {% if messages %}
+  <div style="position: absolute; top: 10px; right: 10px;z-index:100;">
+    {% for category, message in messages %}
+      <div class=" lead shadow alert alert-{{ category }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <!-- <strong>Title</strong> --> {{ message }}
+      </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+
+  <!-- left side navigation-card -->
+<div class="row no-gutters" style="height:100vh;">
+  <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2  p-4 bg-dark" style="height:100vh;">
+    <div class="card border-0 bg-transparent" style="height:100%;">
+        <div  class="cursor-default lead card-header bg-success text-white text-center ">
+        Simon Gschnell
+      </div>
+
+      <a class="rounded mt-4 list-group-item list-group-item-action active align-text-bottom"  href="{{url_for('index')}}" ><i class="material-icons align-bottom mr-3">home</i>Home</a>
+      <a class="rounded mt-4 list-group-item list-group-item-action align-text-bottom"   href="{{url_for('about')}}" ><i class="material-icons align-bottom mr-3">account_circle</i>About</a>
+      <a class="rounded mt-4 list-group-item list-group-item-action align-text-bottom"  href="{{url_for('contact')}}" ><i class="material-icons align-bottom mr-3">notes</i>Contact</a>
+      <a class="rounded mt-4 list-group-item list-group-item-action align-text-bottom" href="{{url_for('cv')}}" ><i class="material-icons align-bottom mr-3">menu_book</i>CV</a>
+            <a class="rounded text-white mt-4 list-group-item list-group-item-action align-text-bottom bg-danger" href="{{url_for('cv')}}" ><i class="material-icons align-bottom mr-3">style</i>Projects</a>
+
+      </div>
+    </div>
+  <div class="col"><div class="container-fluid px-3 py-4" style="height:100vh; "><div class="card main-card">
+
+    {% block content %}
+
+    {% endblock %}
+
+  </div></div></div>
+</div>
+    <!-- Your page content -->
+
+
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+
+    {% endblock %}
+  </body>
+</html>

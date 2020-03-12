@@ -1,0 +1,14 @@
+{% from 'bootstrap/form.html' import render_form %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="p-5">
+        <p class="display-4 ">Contact me</p>
+        {% if form %}
+        {{ render_form(form) }}
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
