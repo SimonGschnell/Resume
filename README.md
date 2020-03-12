@@ -1,8 +1,8 @@
-#Resume
+# Resume
 
 This respository is dedicated to my cv, a website containing different information about me
 
-##Content
+## Content
 
 * About me
 * Downloadable cv
