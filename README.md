@@ -1,6 +1,6 @@
-# Resume
+# Flaks project
 
-This respository is dedicated to my cv, a website containing different information about me
+A flask project which I wanted to use as my portfoglio but I changed my mind
 
 ## Content
 
